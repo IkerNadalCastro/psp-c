@@ -51,6 +51,7 @@ int main() {
         sleep(1); 
 
         printf("[Hijo]: Mi pid es %d, el de mi padre es %d y el de mi abuelo es %d \n", getpid(), getppid(), pidAbuelo);
+        close(fd[0]); 
 
     } else {
 
@@ -71,8 +72,10 @@ int main() {
         int statusSalida = WEXITSTATUS(status_hijo);
 
         printf("[Padre]: Mi hijo ya acabado y este es su status de salida: %d \n", statusSalida); 
+        close(fd[1]);  
 
-
+        return 0; 
+        
     }
 
 }
