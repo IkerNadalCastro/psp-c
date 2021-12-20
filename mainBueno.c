@@ -68,7 +68,7 @@ int main() {
 
         int status_hijo; 
         wait(&status_hijo); 
-        int statusSalida = WIFEXITED(status_hijo);
+        int statusSalida = WEXITSTATUS(status_hijo);
 
         printf("[Padre]: Mi hijo ya acabado y este es su status de salida: %d \n", statusSalida); 
 
